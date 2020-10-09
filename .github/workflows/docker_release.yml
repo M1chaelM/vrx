@@ -51,14 +51,14 @@ jobs:
         env:
           TAG: ${{env.registry}}:${{env.dockerhub_tag_prefix}}${{env.tag}}
         with:
-          args: push ${IMAGE_TAG}
+          args: push ${TAG}
 
       - name: Push current image to DockerHub
         uses: actions-hub/docker@master
         env:
           TAG: ${{env.registry}}:${{env.dockerhub_tag_prefix}}current
         with:
-          args: push ${IMAGE_TAG}
+          args: push ${TAG}
 
   release-docker-image-nvidia-bionic-melodic-gazebo9:
     runs-on: ubuntu-latest
