@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       image_name: vrx
-      registry: npslearninglab/vrx
+      registry: ${{secrets.DOCKER_VRX_REGISTRY}}
       tag: ${GITHUB_REF#refs/tags/}
       dockerhub_tag_prefix:
       build_docker_flags:
@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       image_name: vrx_nvidia
-      registry: npslearninglab/vrx
+      registry: ${{secrets.DOCKER_VRX_REGISTRY}}
       tag: ${GITHUB_REF#refs/tags/}
       dockerhub_tag_prefix: nvidia_
       build_docker_flags: -n
